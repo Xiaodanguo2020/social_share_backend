@@ -4,7 +4,11 @@ const app = express()
 
 const port = 4000
 
+const corsMiddleWare = require("cors");
+
 const listingRouter = require("./routers/listing")
+
+app.use(corsMiddleWare())
 
 app.use("/listing",listingRouter)
 
