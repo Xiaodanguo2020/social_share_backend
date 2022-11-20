@@ -10,7 +10,7 @@ const listingRouter = require("./routers/listing")
 
 app.use(corsMiddleWare())
 
-app.use("/listing",listingRouter)
+app.use("/listings",listingRouter)
 
 
 app.listen(port, () => {
