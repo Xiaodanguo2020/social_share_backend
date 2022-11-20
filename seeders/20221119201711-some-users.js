@@ -65,6 +65,30 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: "Estaban",
+        email: "estaban@estaban.com",
+        password: bcrypt.hashSync("estaban", 10),
+        about:
+          "I am striving to live a minimum life style as much as possible, up to share and I locate quite centra",
+        zip_code: "1053VE",
+        street_name: "Bilderdijkkade",
+        house_nr: 896,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: "Pratima",
+        email: "pratima@pratima.com",
+        password: bcrypt.hashSync("pratima", 10),
+        about:
+          "I am striving to live a minimum life style as much as possible, up to share and I locate quite centra",
+        zip_code: "1035HL",
+        street_name: "Potvisstraat",
+        house_nr: 87,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 

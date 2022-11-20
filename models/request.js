@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         through: "order",
         foreignKey: "requestId",
       });
+      request.belongsTo(models.category, { foreignKey: "categoryId" });
     }
   }
   request.init(
@@ -23,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       active: { type: DataTypes.BOOLEAN, allowNull: false },
       start_date: { type: DataTypes.DATE, allowNull: false },
       end_date: { type: DataTypes.DATE, allowNull: false },
+      categoryId: DataTypes.INTEGER,
     },
     {
       sequelize,

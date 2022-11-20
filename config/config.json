@@ -1,7 +1,7 @@
 {
   "development": {
     "url": "postgres://fohbujzp:SkFghtJ1PFA7B2pRYJuY3OUrnvQD4JCM@lucky.db.elephantsql.com/fohbujzp",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",

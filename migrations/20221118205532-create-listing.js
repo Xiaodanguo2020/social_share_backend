@@ -23,6 +23,7 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: true,
       },
+      // migrate to delete location
       location: {
         type: Sequelize.STRING,
       },
@@ -34,6 +35,15 @@ module.exports = {
         references: {
           key: "id",
           model: "users",
+        },
+        onDelete: "SET NULL",
+        onUpdate: "CASCADE",
+      },
+      categoryId: {
+        type: Sequelize.INTEGER,
+        references: {
+          key: "id",
+          model: "categories",
         },
         onDelete: "SET NULL",
         onUpdate: "CASCADE",
