@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Xiaodanguo2020/social_share_backend/issues"
   },
-  "homepage": "https://github.com/Xiaodanguo2020/social_share_backend#readme"
+  "homepage": "https://github.com/Xiaodanguo2020/social_share_backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.6",
+    "sequelize-cli": "^6.5.2"
+  }
 }
