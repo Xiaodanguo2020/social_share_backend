@@ -1,14 +1,13 @@
-const express = require("express")
+const express = require("express");
 
-const app = express()
+const app = express();
 
-const port = 4000
+const port = 4000;
 
-const listingRouter = require("./routers/listing")
+const listingRouter = require("./routers/listing");
 
-app.use("/listing",listingRouter)
-
+app.use("/listings", listingRouter);
 
 app.listen(port, () => {
-	console.log("Express Server listening on port 4000")
-})
+  console.log("Express Server listening on port 4000");
+});
