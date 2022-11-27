@@ -1,12 +1,28 @@
+//packages
+
 const express = require("express");
+const corsMiddleWare = require("cors");
 
-const app = express();
+//routers
+const listingRouter = require("./routers/listing");
+const authRouter = require("./routers/auth");
+const requestRouter = require("./routers/request");
 
+//constants
 const port = 4000;
 
-const listingRouter = require("./routers/listing");
+//create an express app
+const app = express();
+app.use(corsMiddleWare());
+
+//// express.json() to be able to read request bodies of JSON requests a.k.a. body-parser
+app.use(express.json());
+
+//routes
 
 app.use("/listings", listingRouter);
+app.use("/auth", authRouter);
+// app.use("/request", requestRouter);
 
 app.listen(port, () => {
   console.log("Express Server listening on port 4000");

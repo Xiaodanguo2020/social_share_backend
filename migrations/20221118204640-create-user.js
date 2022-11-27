@@ -26,6 +26,8 @@ module.exports = {
       },
       image: {
         type: Sequelize.STRING,
+        defaultValue:
+          "https://180dc.org/wp-content/uploads/2022/04/Blank-Avatar.png",
       },
       createdAt: {
         allowNull: false,
