@@ -7,6 +7,7 @@ const corsMiddleWare = require("cors");
 const listingRouter = require("./routers/listing");
 const authRouter = require("./routers/auth");
 const requestRouter = require("./routers/request");
+const categoriesRouter = require("./routers/categories");
 
 //constants
 const port = 4000;
@@ -21,6 +22,7 @@ app.use(express.json());
 //routes
 
 app.use("/listings", listingRouter);
+app.use("/categories", categoriesRouter);
 app.use("/auth", authRouter);
 // app.use("/request", requestRouter);
 
