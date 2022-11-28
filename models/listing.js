@@ -22,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
       description: { type: DataTypes.STRING, allowNull: false },
       image: DataTypes.STRING,
       available: { type: DataTypes.BOOLEAN, allowNull: false },
-      image: DataTypes.STRING,
       categoryId: DataTypes.INTEGER,
     },
     {

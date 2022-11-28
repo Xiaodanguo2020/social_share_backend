@@ -74,7 +74,7 @@ router.post("/signup", async (req, res) => {
 router.get("/me", authMiddleware, async (req, res) => {
   // don't send back the password hash
 
-  const userRequetsData = await Request.findAll({
+  const userRequestData = await Request.findAll({
     include: [
       {
         model: Listing,
@@ -94,12 +94,12 @@ router.get("/me", authMiddleware, async (req, res) => {
     where: { userId: req.user.id },
   });
 
-  console.log("this is my user request data", userRequetsData);
+  console.log("this is my user request data", userRequestData);
 
   delete req.user.dataValues["password"];
   res.status(200).send({
     user: req.user.dataValues,
-    myRequsets: userRequetsData,
+    myRequests: userRequestData,
     myListings: userListingsData,
   });
 });
