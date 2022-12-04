@@ -92,7 +92,7 @@ module.exports = {
         description:
           "On compressed air, suitable for nails and staples up to 90mm.",
         image:
-          "https://images.peerby.com/unsafe/800x/smart/https://ucarecdn.com/f0ec5cb0-c876-4809-82c6-abd0adc554f8~1/nth/0/-/format/jpeg/-/quality/lightest",
+          "https://ae01.alicdn.com/kf/H55f807d653dd497cb0107b6b2a0633e5n/Furniture-Framing-Nailer-Gun-Pneumatic-Cement-Woodworking-Nail-Gun-Frame-Tracker-Lightweight-Nail-Gun-Professional-Air.jpg_Q90.jpg_.webp",
         available: true,
         userId: 5,
         categoryId: 2,

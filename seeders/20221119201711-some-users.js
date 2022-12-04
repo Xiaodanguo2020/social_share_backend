@@ -16,11 +16,13 @@ module.exports = {
         house_nr: 300,
         createdAt: new Date(),
         updatedAt: new Date(),
+        image:
+          "https://ca.slack-edge.com/T0DK39WAJ-U042P763K6K-c84d9d64c423-512",
       },
       {
-        name: "Yuqi",
-        email: "yuqi@yuqi.com",
-        password: bcrypt.hashSync("yuqi", 10),
+        name: "Nigel",
+        email: "nigel@nigel.com",
+        password: bcrypt.hashSync("nigel", 10),
         about:
           "I am striving to live a minimum life style as much as possible, up to share and I locate quite centra",
         zip_code: "1017JB",
@@ -28,6 +30,8 @@ module.exports = {
         house_nr: 1674,
         createdAt: new Date(),
         updatedAt: new Date(),
+        image:
+          "https://ca.slack-edge.com/T0DK39WAJ-U03P16ZCVRN-7a14eec05a7b-512",
       },
       {
         name: "Aga",
@@ -40,6 +44,8 @@ module.exports = {
         house_nr: 174,
         createdAt: new Date(),
         updatedAt: new Date(),
+        image:
+          "https://ca.slack-edge.com/T0DK39WAJ-U03H9HWB71Q-b62510f891e3-512",
       },
       {
         name: "Karla",
@@ -52,6 +58,8 @@ module.exports = {
         house_nr: 637,
         createdAt: new Date(),
         updatedAt: new Date(),
+        image:
+          "https://ca.slack-edge.com/T0DK39WAJ-U01667UMMB2-b76044690f9e-512",
       },
       {
         name: "Maria",
@@ -64,6 +72,8 @@ module.exports = {
         house_nr: 364,
         createdAt: new Date(),
         updatedAt: new Date(),
+        image:
+          "https://ca.slack-edge.com/T0DK39WAJ-U03GJTTB4PQ-3b3d808921cb-512",
       },
       {
         name: "Estaban",
@@ -76,6 +86,8 @@ module.exports = {
         house_nr: 896,
         createdAt: new Date(),
         updatedAt: new Date(),
+        image:
+          "https://ca.slack-edge.com/T0DK39WAJ-U03MLHHGV2P-58764610c18e-512",
       },
       {
         name: "Pratima",
@@ -88,6 +100,8 @@ module.exports = {
         house_nr: 87,
         createdAt: new Date(),
         updatedAt: new Date(),
+        image:
+          "https://ca.slack-edge.com/T0DK39WAJ-U03CCUEGK98-0c3a155c4156-512",
       },
     ]);
   },

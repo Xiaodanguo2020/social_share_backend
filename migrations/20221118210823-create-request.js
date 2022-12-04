@@ -11,10 +11,11 @@ module.exports = {
       },
       title: {
         type: Sequelize.STRING,
-        allowNull: false,
+        defaultValue: "dear neighbour",
       },
       description: {
         type: Sequelize.STRING,
+        defaultValue: "Thank you for considering lending the item to me",
       },
       image: {
         type: Sequelize.STRING,

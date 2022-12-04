@@ -72,7 +72,7 @@ router.post("/signup", async (req, res) => {
 // - get the users email & name using only their token
 // - checking if a token is (still) valid
 router.get("/me", authMiddleware, async (req, res) => {
-  // don't send back the password hash
+  console.log("request on Me endpoint");
 
   const userRequestData = await Request.findAll({
     include: [
@@ -94,7 +94,12 @@ router.get("/me", authMiddleware, async (req, res) => {
     where: { userId: req.user.id },
   });
 
-  console.log("this is my user request data", userRequestData);
+  console.log("user token");
+
+  // console.log(
+  //   "user Listing data",
+  //   userListingsData.map((list) => list.requests)
+  // );
 
   delete req.user.dataValues["password"];
   res.status(200).send({

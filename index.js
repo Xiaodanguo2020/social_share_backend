@@ -6,7 +6,7 @@ const corsMiddleWare = require("cors");
 //routers
 const listingRouter = require("./routers/listing");
 const authRouter = require("./routers/auth");
-const requestRouter = require("./routers/request");
+const reqRouter = require("./routers/request");
 const categoriesRouter = require("./routers/categories");
 
 //constants
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use("/listings", listingRouter);
 app.use("/categories", categoriesRouter);
 app.use("/auth", authRouter);
-// app.use("/request", requestRouter);
+app.use("/requests", reqRouter);
 
 app.listen(port, () => {
   console.log("Express Server listening on port 4000");
