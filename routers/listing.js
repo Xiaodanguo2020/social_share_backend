@@ -122,10 +122,10 @@ router.patch(
         },
       });
 
-      console.log("test update order", updateOrder);
+      // console.log("test update order", updateOrder);
 
       const updatedOrder = await updateOrder.update({ status: status });
-      console.log("updeated Order", updatedOrder);
+      // console.log("updeated Order", updatedOrder);
       res.send(updatedOrder);
     } catch (e) {
       console.log(e.message);
