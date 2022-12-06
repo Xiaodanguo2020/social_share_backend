@@ -10,6 +10,9 @@ const listing = require("../models/listing");
 const router = new Router();
 
 router.get("/", async (req, res, next) => {
+  const ws = req.app.get('ws')
+  ws.emit('get listing')
+
   const listings = await Listing.findAll({
     include: [Category, User],
   });
@@ -35,9 +38,14 @@ router.get("/:id", async (req, res, next) => {
 // end point to add requset to listings.
 router.post("/:listingId/request", authMiddleware, async (req, res, next) => {
   try {
-    // console.log("did it coe here");
     const listingId = parseInt(req.params.listingId);
-    const listing = await Listing.findByPk(listingId);
+    const listing = await Listing.findByPk(listingId, {
+      include: User,
+      raw: true
+    });
+
+    console.log('findListing', listing)
+
 
     if (!listing) {
       return res.status(404).send({ message: "this listing does not exist" });
@@ -48,8 +56,6 @@ router.post("/:listingId/request", authMiddleware, async (req, res, next) => {
     if (!start_date || !end_date) {
       return res.status(400).send({ message: "please provie necessary info" });
     }
-
-    // console.log("my user id from auth", listing.image);
 
     const newRequest = await Request.create({
       title: title,
@@ -68,9 +74,8 @@ router.post("/:listingId/request", authMiddleware, async (req, res, next) => {
       status: "created",
     });
 
-    // console.log("new order", newOrder);
-
-    // console.log("this new order has come here", newOrder);
+    const ws = req.app.get("ws")
+    ws.emit("order_created", newOrder)
     res.status(201).json({ request: newRequest, order: newOrder });
   } catch (error) {}
 });
