@@ -18,6 +18,8 @@ module.exports = {
         updatedAt: new Date(),
         image:
           "https://ca.slack-edge.com/T0DK39WAJ-U042P763K6K-c84d9d64c423-512",
+        latitude: 52.36366,
+        longitude: 4.92844,
       },
       {
         name: "Nigel",
@@ -32,6 +34,8 @@ module.exports = {
         updatedAt: new Date(),
         image:
           "https://ca.slack-edge.com/T0DK39WAJ-U03P16ZCVRN-7a14eec05a7b-512",
+        latitude: 52.36441421508789,
+        longitude: 4.887009620666504,
       },
       {
         name: "Aga",
@@ -46,6 +50,8 @@ module.exports = {
         updatedAt: new Date(),
         image:
           "https://ca.slack-edge.com/T0DK39WAJ-U03H9HWB71Q-b62510f891e3-512",
+        latitude: 52.38444137573242,
+        longitude: 4.874081134796143,
       },
       {
         name: "Karla",
@@ -60,6 +66,8 @@ module.exports = {
         updatedAt: new Date(),
         image:
           "https://ca.slack-edge.com/T0DK39WAJ-U01667UMMB2-b76044690f9e-512",
+        latitude: 52.3847346,
+        longitude: 4.87647,
       },
       {
         name: "Maria",
@@ -74,6 +82,8 @@ module.exports = {
         updatedAt: new Date(),
         image:
           "https://ca.slack-edge.com/T0DK39WAJ-U03GJTTB4PQ-3b3d808921cb-512",
+        latitude: 52.318267822265625,
+        longitude: 4.9473419189453125,
       },
       {
         name: "Estaban",
@@ -88,7 +98,10 @@ module.exports = {
         updatedAt: new Date(),
         image:
           "https://ca.slack-edge.com/T0DK39WAJ-U03MLHHGV2P-58764610c18e-512",
+        latitude: 52.366233825683594,
+        longitude: 4.870893955230713,
       },
+
       {
         name: "Pratima",
         email: "pratima@pratima.com",
@@ -102,6 +115,8 @@ module.exports = {
         updatedAt: new Date(),
         image:
           "https://ca.slack-edge.com/T0DK39WAJ-U03CCUEGK98-0c3a155c4156-512",
+        latitude: 52.4227181,
+        longitude: 4.8839247,
       },
     ]);
   },
