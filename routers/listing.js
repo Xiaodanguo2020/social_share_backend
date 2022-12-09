@@ -69,12 +69,24 @@ router.post("/:listingId/request", authMiddleware, async (req, res, next) => {
       status: "created",
     });
 
+    const updatedListing = await Listing.findByPk(listing.id,
+      {
+        include: [
+        {
+          model: Request,
+          include: [{ model: User }],
+        },
+      ],
+      order: [["updatedAt", "DESC"]],
+    })
+
     // console.log("new order", newOrder);
 
     // console.log("this new order has come here", newOrder);
 
     const ws = req.app.get("ws");
-    ws.emit("request_send", listing, newRequest, newOrder);
+    console.log('about to send socket', updatedListing)
+    ws.emit("request_send", updatedListing, newRequest, newOrder);
 
     res.status(201).json({ request: newRequest, order: newOrder });
   } catch (error) {}
