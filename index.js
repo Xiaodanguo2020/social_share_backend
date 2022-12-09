@@ -31,9 +31,15 @@ const httpServer = app.listen(port, () => {
   console.log("Express Server listening on port 4000");
 });
 
-const socket = new Server(httpServer);
-socket.on("connection", () => {
+const io = new Server(httpServer);
+io.on("connection", (socket) => {
   console.log("got new connection");
+  socket.on('send_message', async (message) => {
+    console.log('send_message', message)
+
+    socket.emit('message_received', message)
+  })
+
 });
 
-app.set("ws", socket);
+app.set("ws", io);
