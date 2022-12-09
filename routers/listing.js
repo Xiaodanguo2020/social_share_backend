@@ -12,6 +12,7 @@ const router = new Router();
 router.get("/", async (req, res, next) => {
   const listings = await Listing.findAll({
     include: [Category, User],
+    order: [["createdAt", "DESC"]],
   });
 
   res.send(listings);
@@ -71,6 +72,10 @@ router.post("/:listingId/request", authMiddleware, async (req, res, next) => {
     // console.log("new order", newOrder);
 
     // console.log("this new order has come here", newOrder);
+
+    const ws = req.app.get("ws");
+    ws.emit("request_send", listing, newRequest, newOrder);
+
     res.status(201).json({ request: newRequest, order: newOrder });
   } catch (error) {}
 });
@@ -108,6 +113,7 @@ router.patch(
       console.log("get status from request", status);
 
       const listingRelevant = await Listing.findByPk(listingId);
+      const requestRelevant = await Request.findByPk(requestId);
 
       if (listingRelevant.userId !== req.user.id) {
         res
@@ -126,6 +132,9 @@ router.patch(
 
       const updatedOrder = await updateOrder.update({ status: status });
       // console.log("updeated Order", updatedOrder);
+
+      const ws = req.app.get("ws");
+      ws.emit("order_updated", updateOrder, listingRelevant, requestRelevant);
       res.send(updatedOrder);
     } catch (e) {
       console.log(e.message);

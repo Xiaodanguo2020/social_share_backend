@@ -2,6 +2,7 @@
 
 const express = require("express");
 const corsMiddleWare = require("cors");
+const { Server } = require("socket.io");
 
 //routers
 const listingRouter = require("./routers/listing");
@@ -26,6 +27,13 @@ app.use("/categories", categoriesRouter);
 app.use("/auth", authRouter);
 app.use("/requests", reqRouter);
 
-app.listen(port, () => {
+const httpServer = app.listen(port, () => {
   console.log("Express Server listening on port 4000");
 });
+
+const socket = new Server(httpServer);
+socket.on("connection", () => {
+  console.log("got new connection");
+});
+
+app.set("ws", socket);

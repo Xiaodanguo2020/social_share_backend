@@ -82,6 +82,7 @@ router.get("/me", authMiddleware, async (req, res) => {
       },
     ],
     where: { userId: req.user.id },
+    order: [["updatedAt", "DESC"]],
   });
 
   const userListingsData = await Listing.findAll({
@@ -92,6 +93,7 @@ router.get("/me", authMiddleware, async (req, res) => {
       },
     ],
     where: { userId: req.user.id },
+    order: [["updatedAt", "DESC"]],
   });
 
   console.log("user token");
